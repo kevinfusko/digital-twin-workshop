@@ -213,6 +213,16 @@
     </div>
     
     <script>
+        // Check for query parameter on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('q');
+            if (query) {
+                document.getElementById('questionInput').value = query;
+                askQuestion();
+            }
+        });
+        
         function setQuestion(question) {
             document.getElementById('questionInput').value = question;
         }
