@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Digital Twin RAG System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .nav {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .nav a:hover { background: #667eea; color: white; }
+        .content { padding: 40px; }
+        .section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+        p, li {
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .tech-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .tech-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        code {
+            background: #f8f9fa;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #764ba2;
+        }
+        .architecture-diagram {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-family: monospace;
+            line-height: 2;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 20px;
+            border-left: 4px solid #ffc107;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📖 About This System</h1>
+            <p>RAG System Architecture & Implementation</p>
+        </div>
+        
+        <div class="nav">
+            <a href="/">🏠 Home</a>
+            <a href="/about">📖 About</a>
+            <a href="/testing">🧪 Testing</a>
+            <a href="/profile-data">👤 Profile Data</a>
+            <a href="/github">💻 GitHub</a>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>🎯 System Overview</h2>
+                <p>
+                    This is a production-ready <strong>Retrieval-Augmented Generation (RAG)</strong> system 
+                    designed to provide intelligent, context-aware responses about professional background, 
+                    skills, and experience. The system combines vector search with Large Language Model (LLM) 
+                    generation to deliver accurate, relevant answers to recruiter-style questions.
+                </p>
+                
+                <div class="highlight">
+                    <strong>✨ Key Features:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Real-time semantic search across professional profile data</li>
+                        <li>AI-powered response generation using state-of-the-art LLMs</li>
+                        <li>STAR methodology implementation for structured content</li>
+                        <li>Relevance scoring and source attribution</li>
+                        <li>Optimized for recruiter interactions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🏗️ System Architecture</h2>
+                
+                <div class="architecture-diagram">
+<pre>
+┌─────────────────┐
+│  User Query     │
+│  "Tell me about │
+│  your skills"   │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────────────────────────┐
+│   Flask Web Application (app.py)   │
+│   - Route handling                  │
+│   - API endpoints                   │
+└────────┬───────────────────┬────────┘
+         │                   │
+         ▼                   ▼
+┌──────────────────┐  ┌─────────────────┐
+│  Upstash Vector  │  │   Groq API      │
+│  Database        │  │   (LLM)         │
+│  - Embedding     │  │   - llama-3.1   │
+│  - Search        │  │   - Generation  │
+└────────┬─────────┘  └────────┬────────┘
+         │                     │
+         │  1. Query vectors   │
+         │  2. Get top 3       │
+         │     matches         │
+         └──────┬──────────────┘
+                │
+                ▼
+         ┌────────────────┐
+         │  Response      │
+         │  + Sources     │
+         │  + Scores      │
+         └────────────────┘
+</pre>
+                </div>
+                
+                <h3>How It Works:</h3>
+                <ol style="margin-left: 20px;">
+                    <li><strong>Query Processing:</strong> User submits a question through the web interface</li>
+                    <li><strong>Vector Search:</strong> Question is embedded and searched against professional profile vectors in Upstash</li>
+                    <li><strong>Context Retrieval:</strong> Top 3 most relevant content chunks are retrieved with relevance scores</li>
+                    <li><strong>Prompt Construction:</strong> Retrieved context is formatted into a prompt for the LLM</li>
+                    <li><strong>Response Generation:</strong> Groq's llama-3.1-8b-instant model generates a personalized response</li>
+                    <li><strong>Display:</strong> Answer is shown with source attribution and relevance scores</li>
+                </ol>
+            </div>
+            
+            <div class="section">
+                <h2>🛠️ Technology Stack</h2>
+                
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <h4>🗄️ Vector Database</h4>
+                        <p><strong>Upstash Vector</strong></p>
+                        <ul style="margin-left: 20px; font-size: 0.95em;">
+                            <li>Built-in embeddings</li>
+                            <li>Serverless architecture</li>
+                            <li>REST API access</li>
+                            <li>Optimized for speed</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <h4>🤖 LLM Provider</h4>
+                        <p><strong>Groq</strong></p>
+                        <ul style="margin-left: 20px; font-size: 0.95em;">
+                            <li>Ultra-fast inference</li>
+                            <li>llama-3.1-8b-instant</li>
+                            <li>Low latency responses</li>
+                            <li>Cost-effective</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <h4>🌐 Web Framework</h4>
+                        <p><strong>Flask</strong></p>
+                        <ul style="margin-left: 20px; font-size: 0.95em;">
+                            <li>Python web framework</li>
+                            <li>RESTful API design</li>
+                            <li>Template rendering</li>
+                            <li>Easy deployment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <h4>💾 Data Format</h4>
+                        <p><strong>JSON + STAR Method</strong></p>
+                        <ul style="margin-left: 20px; font-size: 0.95em;">
+                            <li>Structured profile data</li>
+                            <li>STAR methodology</li>
+                            <li>Chunked content</li>
+                            <li>Metadata tagging</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>⚙️ Implementation Details</h2>
+                
+                <h3>1. Data Preparation</h3>
+                <p>
+                    Professional profile data is structured using the STAR (Situation, Task, Action, Result) 
+                    methodology and broken into semantic chunks. Each chunk contains:
+                </p>
+                <ul style="margin-left: 20px;">
+                    <li><code>id</code>: Unique identifier</li>
+                    <li><code>title</code>: Section title</li>
+                    <li><code>type</code>: Content category (summary, skills, achievement, etc.)</li>
+                    <li><code>content</code>: Rich text content in first-person narrative</li>
+                    <li><code>metadata</code>: Tags and categories for enhanced retrieval</li>
+                </ul>
+                
+                <h3>2. Vector Embedding & Storage</h3>
+                <p>
+                    Content chunks are automatically embedded using Upstash Vector's built-in embedding model 
+                    and stored in the vector database. This eliminates the need for separate embedding services 
+                    and simplifies the architecture.
+                </p>
+                
+                <h3>3. Semantic Search</h3>
+                <p>
+                    When a query is received, it's embedded using the same model and compared against stored 
+                    vectors using cosine similarity. The top 3 most relevant chunks are retrieved with their 
+                    relevance scores (0.0 to 1.0).
+                </p>
+                
+                <h3>4. Response Generation</h3>
+                <p>
+                    Retrieved content is combined into a context prompt that instructs the LLM to respond 
+                    in first person, as if speaking directly about personal professional background. 
+                    Temperature is set to 0.7 for natural yet consistent responses.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>🎓 STAR Methodology Implementation</h2>
+                <p>
+                    Professional achievements and experiences are structured using the STAR framework:
+                </p>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Situation:</strong> Context and background of the challenge</li>
+                    <li><strong>Task:</strong> Specific responsibilities and objectives</li>
+                    <li><strong>Action:</strong> Steps taken and decisions made</li>
+                    <li><strong>Result:</strong> Quantifiable outcomes and impact</li>
+                </ul>
+                <p style="margin-top: 15px;">
+                    This structured approach ensures responses to behavioral interview questions 
+                    are comprehensive, focused, and demonstrate clear value delivered.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>📊 Quality Optimization</h2>
+                
+                <h3>Vector Search Quality</h3>
+                <ul style="margin-left: 20px;">
+                    <li>Content chunking optimized for semantic coherence</li>
+                    <li>Enriched text combining titles with content</li>
+                    <li>Metadata tagging for enhanced retrieval precision</li>
+                    <li>Top-k selection tuned for context window optimization</li>
+                </ul>
+                
+                <h3>Response Quality</h3>
+                <ul style="margin-left: 20px;">
+                    <li>First-person narrative for authentic voice</li>
+                    <li>Context-aware prompting with system instructions</li>
+                    <li>Temperature tuning for consistency</li>
+                    <li>Source attribution for transparency</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>🚀 Deployment</h2>
+                <p>
+                    This system is designed for easy local deployment with production-ready architecture:
+                </p>
+                <ul style="margin-left: 20px;">
+                    <li>Environment-based configuration via <code>.env</code> files</li>
+                    <li>Serverless vector database (no infrastructure management)</li>
+                    <li>Flask development server for local testing</li>
+                    <li>Ready for production deployment (Vercel, AWS, Railway, etc.)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twin RAG System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .nav {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .nav a:hover { background: #667eea; color: white; }
+        .content { padding: 40px; }
+        .query-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .query-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-family: inherit;
+        }
+        .query-input:focus { outline: none; border-color: #667eea; }
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .response-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+            display: none;
+        }
+        .response-section.show { display: block; }
+        .response-title {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .response-text {
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+        .sources {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .source-item {
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .source-title { font-weight: 600; color: #333; }
+        .source-score {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        .loading.show { display: block; }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .sample-questions {
+            margin-top: 20px;
+        }
+        .sample-questions h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .sample-btn {
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .sample-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Digital Twin RAG System</h1>
+            <p>AI-Powered Professional Profile Assistant</p>
+        </div>
+        
+        <div class="nav">
+            <a href="/">🏠 Home</a>
+            <a href="/about">📖 About</a>
+            <a href="/testing">🧪 Testing</a>
+            <a href="/profile-data">👤 Profile Data</a>
+            <a href="/github">💻 GitHub</a>
+        </div>
+        
+        <div class="content">
+            <div class="query-section">
+                <h2 style="margin-bottom: 20px; color: #333;">Ask About My Professional Background</h2>
+                <textarea 
+                    id="questionInput" 
+                    class="query-input" 
+                    rows="3" 
+                    placeholder="Ask me about my experience, skills, projects, or career goals..."
+                ></textarea>
+                <button class="btn" onclick="askQuestion()">Ask Question</button>
+                
+                <div class="sample-questions">
+                    <h3>💭 Sample Questions:</h3>
+                    <button class="sample-btn" onclick="setQuestion('Tell me about your work experience')">Work Experience</button>
+                    <button class="sample-btn" onclick="setQuestion('What are your technical skills?')">Technical Skills</button>
+                    <button class="sample-btn" onclick="setQuestion('Describe your career goals')">Career Goals</button>
+                    <button class="sample-btn" onclick="setQuestion('What is your experience with AI/ML?')">AI/ML Experience</button>
+                </div>
+            </div>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p style="margin-top: 15px; color: #666;">Searching professional profile...</p>
+            </div>
+            
+            <div class="response-section" id="responseSection">
+                <div class="response-title">🤖 Response:</div>
+                <div class="response-text" id="responseText"></div>
+                
+                <div class="sources">
+                    <h3 style="margin-bottom: 15px; color: #667eea;">📚 Sources Used:</h3>
+                    <div id="sourcesContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function setQuestion(question) {
+            document.getElementById('questionInput').value = question;
+        }
+        
+        async function askQuestion() {
+            const question = document.getElementById('questionInput').value.trim();
+            if (!question) return;
+            
+            const loading = document.getElementById('loading');
+            const responseSection = document.getElementById('responseSection');
+            
+            loading.classList.add('show');
+            responseSection.classList.remove('show');
+            
+            try {
+                const response = await fetch('/api/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question })
+                });
+                
+                const data = await response.json();
+                
+                document.getElementById('responseText').textContent = data.answer;
+                
+                const sourcesContainer = document.getElementById('sourcesContainer');
+                sourcesContainer.innerHTML = '';
+                
+                data.sources.forEach(source => {
+                    const sourceDiv = document.createElement('div');
+                    sourceDiv.className = 'source-item';
+                    sourceDiv.innerHTML = `
+                        <span class="source-title">${source.title}</span>
+                        <span class="source-score">Relevance: ${source.score}</span>
+                    `;
+                    sourcesContainer.appendChild(sourceDiv);
+                });
+                
+                loading.classList.remove('show');
+                responseSection.classList.add('show');
+                
+            } catch (error) {
+                loading.classList.remove('show');
+                alert('Error: ' + error.message);
+            }
+        }
+        
+        document.getElementById('questionInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                askQuestion();
+            }
+        });
+    </script>
+</body>
+</html>
