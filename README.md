@@ -37,15 +37,17 @@
 
 ## 🛠️ Technology Stack
 
+- **Frontend**: Next.js 14 + React + TypeScript
+- **Styling**: Tailwind CSS
 - **Vector Database**: Upstash Vector (serverless, built-in embeddings)
 - **LLM Provider**: Groq (ultra-fast inference)
-- **Web Framework**: Flask (Python)
+- **API Routes**: Next.js API Routes
 - **Data Format**: JSON with STAR methodology
-- **Deployment**: Local/Cloud ready
+- **Deployment**: Vercel/Netlify ready
 
 ## 📋 Prerequisites
 
-- Python 3.8+
+- Node.js 18+ and npm
 - Upstash Vector account (free tier available)
 - Groq API key (free tier available)
 
@@ -61,7 +63,7 @@ cd digital-twin-workshop
 ### 2. Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+npm install
 ```
 
 ### 3. Configure Environment Variables
@@ -88,13 +90,13 @@ GROQ_API_KEY=your_groq_api_key_here
    - Visit https://console.groq.com/
    - Generate an API key
 
-### 4. Run the Web Application
+### 4. Run the Development Server
 
 ```bash
-python3 app.py
+npm run dev
 ```
 
-Visit `http://localhost:5000` to access the web interface.
+Visit `http://localhost:3000` to access the React application.
 
 ### 5. Or Run the CLI Version
 
@@ -102,33 +104,40 @@ Visit `http://localhost:5000` to access the web interface.
 python3 digitaltwin_rag.py
 ```
 
+(Requires Python and `pip install -r requirements.txt`)
+
 ## 📁 Project Structure
 
 ```
 digital-twin-workshop/
-├── app.py                      # Flask web application
-├── digitaltwin_rag.py          # CLI RAG system
+├── app/                        # Next.js App Router
+│   ├── page.tsx                # Home page (query interface)
+│   ├── layout.tsx              # Root layout
+│   ├── globals.css             # Global styles
+│   ├── about/                  # About page
+│   ├── testing/                # Testing page (to be created)
+│   ├── profile-data/           # Profile data page (to be created)
+│   ├── github/                 # GitHub page (to be created)
+│   └── api/
+│       └── query/
+│           └── route.ts        # RAG query API endpoint
+├── digitaltwin_rag.py          # CLI RAG system (Python)
 ├── digitaltwin.json            # Professional profile data
-├── embed_digitaltwin.py        # Embedding utilities
-├── requirements.txt            # Python dependencies
+├── package.json                # Node dependencies
+├── tsconfig.json               # TypeScript config
+├── tailwind.config.js          # Tailwind CSS config
+├── next.config.js              # Next.js config
 ├── .env                        # Environment variables (create this)
-├── .gitignore                  # Git ignore rules
-├── README.md                   # This file
-└── templates/                  # HTML templates
-    ├── index.html              # Main query interface
-    ├── about.html              # Architecture documentation
-    ├── testing.html            # 25+ sample queries
-    ├── profile_data.html       # STAR methodology data
-    └── github.html             # Repository link
+└── README.md                   # This file
 ```
 
-## 🎯 Web Interface Pages
+## 🎯 React App Pages
 
-1. **Home** (`/`) - Interactive query interface with sample questions
-2. **About** (`/about`) - RAG system architecture and implementation details
-3. **Testing** (`/testing`) - 25+ recruiter-style queries with quality assessments
-4. **Profile Data** (`/profile-data`) - Structured professional content with STAR methodology
-5. **GitHub** (`/github`) - Repository link and implementation checklist
+1. **Home** (`/`) - Interactive query interface with real-time AI responses ✅
+2. **About** (`/about`) - RAG system architecture and implementation details ✅
+3. **Testing** (`/testing`) - 25+ recruiter-style queries with quality assessments (to be created)
+4. **Profile Data** (`/profile-data`) - Structured professional content with STAR methodology (to be created)
+5. **GitHub** (`/github`) - Repository link and implementation checklist (to be created)
 
 ## 🧪 Testing
 
@@ -170,13 +179,9 @@ Achievements follow the STAR framework:
 
 ## 🔧 API Endpoints
 
-- `GET /` - Main query interface
-- `GET /about` - Architecture documentation
-- `GET /testing` - Testing suite
-- `GET /profile-data` - Profile data visualization
-- `GET /github` - Repository link
 - `POST /api/query` - RAG query endpoint
-- `GET /api/health` - Health check
+  - Request: `{ "question": "your question here" }`
+  - Response: `{ "answer": "...", "sources": [...], "relevance_scores": [...] }`
 
 ## 🎓 Implementation Highlights
 
@@ -209,13 +214,24 @@ Achievements follow the STAR framework:
 
 ### Local Development
 ```bash
-python3 app.py
+npm run dev
 ```
 
-### Production (Vercel, Railway, AWS, etc.)
-1. Set environment variables in platform
-2. Deploy Flask application
-3. Configure domain (optional)
+### Production Deployment (Vercel - Recommended)
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Set environment variables in Vercel dashboard
+# UPSTASH_VECTOR_REST_URL
+# UPSTASH_VECTOR_REST_TOKEN
+# GROQ_API_KEY
+```
+
+Or deploy with one click: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
 ## 🤝 Contributing
 
