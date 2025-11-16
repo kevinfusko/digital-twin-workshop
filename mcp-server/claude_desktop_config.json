@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "digital-twin": {
+      "command": "node",
+      "args": [
+        "/absolute/path/to/digital-twin-workshop/mcp-server/build/index.js"
+      ],
+      "env": {
+        "UPSTASH_VECTOR_REST_URL": "your_upstash_vector_rest_url",
+        "UPSTASH_VECTOR_REST_TOKEN": "your_upstash_vector_rest_token",
+        "GROQ_API_KEY": "your_groq_api_key"
+      }
+    }
+  }
+}

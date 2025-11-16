@@ -1,0 +1,33 @@
+{
+  "name": "digital-twin-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Digital Twin RAG assistant",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "digital-twin-mcp-server": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x build/index.js",
+    "watch": "tsc --watch",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "digital-twin",
+    "rag"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@upstash/vector": "^1.0.0",
+    "groq-sdk": "^0.3.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}

@@ -4,6 +4,7 @@
 
 ## 🌟 Features
 
+- **MCP Server**: Model Context Protocol server for Claude Desktop integration
 - **Real-time Semantic Search**: Query professional profile data using vector embeddings
 - **AI-Powered Responses**: Natural language generation using Groq's llama-3.1-8b-instant
 - **STAR Methodology**: Structured achievements following Situation-Task-Action-Result framework
@@ -98,14 +99,25 @@ npm run dev
 
 Visit `http://localhost:3000` to access the React application.
 
-### 5. Or Run the CLI Version
+### 5. Run the MCP Server (for Claude Desktop)
+
+```bash
+# Build and run the MCP server
+cd mcp-server
+npm install
+npm run build
+
+# Configure Claude Desktop (see mcp-server/README.md for details)
+# Then restart Claude Desktop
+```
+
+### 6. Or Run the CLI Version
 
 ```bash
 python3 digitaltwin_rag.py
 ```
 
 (Requires Python and `pip install -r requirements.txt`)
-
 ## 📁 Project Structure
 
 ```
@@ -120,7 +132,30 @@ digital-twin-workshop/
 │   ├── github/                 # GitHub page (to be created)
 │   └── api/
 │       └── query/
-│           └── route.ts        # RAG query API endpoint
+## 🎯 Usage Options
+
+### 1. Claude Desktop (MCP Server) 🤖
+
+The MCP server enables direct integration with Claude Desktop:
+
+- **Natural Conversation**: Ask questions naturally in Claude
+- **Tool Integration**: Uses the `query_digital_twin` tool automatically
+- **Real-time RAG**: Instant responses powered by Upstash + Groq
+
+See `mcp-server/README.md` for setup instructions.
+
+### 2. Web Interface (React App) 🌐
+
+1. **Home** (`/`) - Interactive query interface with real-time AI responses ✅
+2. **About** (`/about`) - RAG system architecture and implementation details ✅
+3. **Testing** (`/testing`) - 25+ recruiter-style queries with quality assessments (to be created)
+4. **Profile Data** (`/profile-data`) - Structured professional content with STAR methodology (to be created)
+5. **GitHub** (`/github`) - Repository link and implementation checklist (to be created)
+
+### 3. CLI (Python) 💻
+
+Command-line interface for testing RAG queries directly.
+│   └── README.md               # MCP server documentation
 ├── digitaltwin_rag.py          # CLI RAG system (Python)
 ├── digitaltwin.json            # Professional profile data
 ├── package.json                # Node dependencies
@@ -129,6 +164,7 @@ digital-twin-workshop/
 ├── next.config.js              # Next.js config
 ├── .env                        # Environment variables (create this)
 └── README.md                   # This file
+``` README.md                   # This file
 ```
 
 ## 🎯 React App Pages
