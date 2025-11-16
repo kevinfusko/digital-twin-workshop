@@ -4,7 +4,7 @@
 Build an MCP server using the roll dice pattern to create a digital twin assistant that can answer questions about a person's professional profile using RAG (Retrieval-Augmented Generation).
 
 ## Reference Repositories
-- **Pattern Reference**: https://github.com/gocallum/rolldice-mcpserver.git
+- **Pattern Reference**: https://github.com/kevinfusko/rolldice-mcpserver
   - Roll dice MCP server - use same technology and pattern for our MCP server
 - **Logic Reference**: https://github.com/gocallum/binal_digital-twin_py.git
   - Python code using Upstash Vector for RAG search with Groq and LLaMA for generations

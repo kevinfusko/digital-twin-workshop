@@ -3,7 +3,7 @@
     "digital-twin": {
       "command": "node",
       "args": [
-        "/absolute/path/to/digital-twin-workshop/mcp-server/build/index.js"
+        "/Users/kevinfuschetto/Bootcamp/digital-twin-workshop/mcp-server/build/index.js"
       ],
       "env": {
         "UPSTASH_VECTOR_REST_URL": "your_upstash_vector_rest_url",

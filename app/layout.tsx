@@ -1,10 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Digital Twin RAG System',
-  description: 'AI-Powered Professional Profile Assistant',
+  title: 'Kevin Fuschetto | Software Engineer',
+  description: 'Brisbane-based Software Engineer specializing in .NET development and IT infrastructure',
 }
 
 export default function RootLayout({
@@ -14,10 +13,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gradient-to-br from-[#667eea] to-[#764ba2]">
-        <div className="min-h-screen p-5">
-          {children}
-        </div>
+      <body className="min-h-screen bg-gray-50">
+        {children}
       </body>
     </html>
   )

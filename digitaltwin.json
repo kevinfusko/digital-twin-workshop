@@ -3,173 +3,188 @@
     "name": "Kevin Fuschetto",
     "title": "Software Engineer",
     "location": "Brisbane, Australia",
-    "summary": "Passionate software engineer with 5+ years building scalable applications...",
-    "elevator_pitch": "Brief 30-second introduction highlighting your unique value proposition",
+    "summary": "Software Engineer with 3+ years of .NET development experience and a strong background in IT support and infrastructure. Skilled in building custom web applications, solving complex technical problems, and delivering solutions that improve operational efficiency. Currently pursuing a Bachelor of Information Technology while working on expanding my expertise across software engineering and systems administration.",
+    "elevator_pitch": "I'm a Software Engineer with a blend of full-stack .NET development experience and hands-on IT support expertise. I build clean, reliable applications, understand business needs deeply, and enjoy solving practical problems that help systems run better. I'm now looking for opportunities where I can contribute both technical skill and adaptability across engineering environments.",
     "contact": {
       "email": "k.fuschetto1999@gmail.com",
-      "linkedin": "https://linkedin.com/in/yourprofile",
-      "github": "https://github.com/yourusername",
-      "portfolio": "https://yourportfolio.com"
+      "linkedin": "https://www.linkedin.com/in/kevin-fuschetto-69787b241",
+      "github": "https://github.com/kevinfusko",
+      "portfolio": ""
     }
   },
   "salary_location": {
-    "current_salary": "$85,000 - $95,000 AUD",
-    "salary_expectations": "$95,000 - $110,000 AUD based on role complexity",
-    "location_preferences": ["Brisbane", "Remote", "Hybrid"],
+    "current_salary": "",
+    "salary_expectations": "",
+    "location_preferences": ["Brisbane", "Australia-wide", "Remote"],
     "relocation_willing": true,
-    "remote_experience": "3+ years remote collaboration experience",
-    "travel_availability": "Available for interstate travel up to 25%",
-    "work_authorization": "Australian Citizen / Permanent Resident"
+    "remote_experience": "Yes",
+    "travel_availability": "Available for interstate travel",
+    "work_authorization": "Australian Temporary Resident (Student Visa)"
   },
   "experience": [
     {
-      "company": "TechCorp Australia",
-      "title": "Senior Software Engineer",
-      "duration": "Jan 2021 - Present (3.5 years)",
-      "company_context": "200+ employee fintech startup, Series B funding",
-      "team_structure": "Engineering team of 25, direct reports: 3 junior developers",
+      "company": "Casu",
+      "title": "Supervisor / General Labourer",
+      "duration": "January 2024 – Present",
+      "company_context": "Landscaping and outdoor construction services provider",
+      "team_structure": "Small project teams; coordination and task planning responsibilities",
       "achievements_star": [
         {
-          "situation": "Legacy monolith causing 3-second page load times affecting user retention",
-          "task": "Lead architectural redesign to improve performance",
-          "action": "Implemented microservices architecture using Docker, Kubernetes, and Redis caching",
-          "result": "Reduced load times by 40% to 1.8s, increased user retention by 15%, saved $50K annually in server costs"
+          "situation": "Daily outdoor projects required organisation and coordination.",
+          "task": "Supervise small teams and ensure smooth project execution.",
+          "action": "Delegated tasks, coordinated workflows, and supported hands-on construction activities.",
+          "result": "Improved task efficiency and maintained consistent project quality."
         }
       ],
-      "technical_skills_used": ["Python", "AWS (EC2, RDS, S3)", "Docker", "Kubernetes", "PostgreSQL"],
-      "leadership_examples": ["Mentored 3 junior developers", "Led code review processes", "Coordinated with product and design teams"],
-      "budget_managed": "$300K annual infrastructure budget",
-      "team_size_managed": 5
+      "technical_skills_used": [],
+      "leadership_examples": ["Team supervision", "Task coordination"],
+      "budget_managed": "",
+      "team_size_managed": 3
+    },
+    {
+      "company": "Azstar Technologies",
+      "title": "IT Field Technician",
+      "duration": "October 2022 – July 2024",
+      "company_context": "Managed IT services provider supporting supermarkets, retail environments, and large banking clients",
+      "team_structure": "Field support team with independent onsite assignments",
+      "achievements_star": [
+        {
+          "situation": "Retail stores were experiencing recurring POS and EFTPOS issues that impacted transactions.",
+          "task": "Provide fast and reliable on-site technical support.",
+          "action": "Diagnosed issues, replaced faulty components, performed POS/EFTPOS integrations, and communicated clearly with store staff.",
+          "result": "Restored operations quickly, improved system stability, and consistently received positive customer feedback."
+        }
+      ],
+      "technical_skills_used": ["POS Systems", "EFTPOS", "Windows", "Networking", "Hardware Diagnostics"],
+      "leadership_examples": [],
+      "budget_managed": "",
+      "team_size_managed": 0
+    },
+    {
+      "company": "NEM S.r.l (Helios Technologies Group)",
+      "title": "IT Manager",
+      "duration": "March 2021 – May 2022",
+      "company_context": "Manufacturing and industrial technology company within the Helios Technologies Group",
+      "team_structure": "Standalone IT role supporting warehouse and office operations",
+      "achievements_star": [
+        {
+          "situation": "Warehouse operations required improvements and outdated internal tools slowed productivity.",
+          "task": "Enhance IT systems and develop custom solutions.",
+          "action": "Managed network infrastructure, automated internal processes, and built custom .NET applications to support warehouse operations.",
+          "result": "Improved efficiency across several workflows and ensured smooth, reliable daily operations."
+        }
+      ],
+      "technical_skills_used": [
+        ".NET Framework", "MVC", "C#", "SQL Server",
+        "HTML5", "CSS3", "JavaScript", "jQuery", "ASP.NET", "VB.NET",
+        "Networking", "Windows Server", "IT Infrastructure"
+      ],
+      "leadership_examples": ["Led development of internal web applications"],
+      "budget_managed": "",
+      "team_size_managed": 0
+    },
+    {
+      "company": "Advantis S.r.l",
+      "title": ".NET Software Developer",
+      "duration": "September 2018 – March 2021",
+      "company_context": "Software development company building custom applications for healthcare and HR clients",
+      "team_structure": "Development team collaborating with clients and internal stakeholders",
+      "achievements_star": [
+        {
+          "situation": "Clients required tailored software solutions to manage healthcare and HR workflows.",
+          "task": "Design and develop custom web applications.",
+          "action": "Built full-stack .NET applications, performed data analysis, designed SQL databases, created APIs, and supported end users with training.",
+          "result": "Delivered reliable applications used across multiple departments and improved client workflow efficiency."
+        }
+      ],
+      "technical_skills_used": [
+        ".NET Framework", "C#", "MVC", "SQL Server",
+        "HTML", "CSS", "JavaScript", "jQuery", "ASP.NET"
+      ],
+      "leadership_examples": ["Provided training for software users"],
+      "budget_managed": "",
+      "team_size_managed": 0
+    },
+    {
+      "company": "Reggiana Riduttori S.r.l",
+      "title": "IT Support Intern",
+      "duration": "January 2018",
+      "company_context": "Industrial manufacturing company",
+      "team_structure": "IT support team assisting internal users",
+      "achievements_star": [],
+      "technical_skills_used": ["IT Support", "Troubleshooting"],
+      "leadership_examples": [],
+      "budget_managed": "",
+      "team_size_managed": 0
+    },
+    {
+      "company": "Tecnoufficio S.r.l",
+      "title": "IT Support Intern",
+      "duration": "May 2017 – June 2017",
+      "company_context": "IT services and hardware support provider",
+      "team_structure": "Technician team handling customer requests",
+      "achievements_star": [],
+      "technical_skills_used": ["PC Repair", "Hardware Diagnostics", "Customer Support"],
+      "leadership_examples": [],
+      "budget_managed": "",
+      "team_size_managed": 0
     }
   ],
   "skills": {
     "technical": {
       "programming_languages": [
-        {"language": "Python", "years": 5, "proficiency": "Expert", "frameworks": ["Django", "FastAPI", "Flask"]},
-        {"language": "JavaScript", "years": 4, "proficiency": "Advanced", "frameworks": ["React", "Node.js", "TypeScript"]}
+        {"language": "C#", "years": 3, "proficiency": "Advanced"},
+        {"language": "JavaScript", "years": 3, "proficiency": "Intermediate"},
+        {"language": "SQL", "years": 3, "proficiency": "Advanced"},
+        {"language": "HTML/CSS", "years": 5, "proficiency": "Advanced"},
+        {"language": "Visual Basic", "years": 1, "proficiency": "Intermediate"}
       ],
-      "databases": ["PostgreSQL (5 years)", "MongoDB (3 years)", "Redis (2 years)"],
-      "cloud_platforms": ["AWS (4 years)", "Docker (3 years)", "Kubernetes (2 years)"],
-      "ai_ml": ["RAG systems", "Vector databases", "LLM integration", "OpenAI API"]
+      "databases": ["SQL Server"],
+      "cloud_platforms": [],
+      "ai_ml": []
     },
-    "soft_skills": ["Technical Leadership", "Cross-functional Collaboration", "Mentoring", "Problem-solving", "Agile/Scrum"],
-    "certifications": ["AWS Solutions Architect (expires 2025)", "Certified Scrum Master (2023)"]
+    "soft_skills": [
+      "Customer Service",
+      "Problem-solving",
+      "Reliable and focused",
+      "Attention to detail",
+      "Clear communication",
+      "Teaching and training"
+    ],
+    "certifications": []
   },
   "education": {
-    "university": "University of Melbourne",
-    "degree": "Bachelor of Computer Science",
-    "graduation_year": 2019,
-    "gpa": "3.7/4.0 (High Distinction)",
-    "relevant_coursework": ["Data Structures", "Algorithms", "Database Systems", "Machine Learning"],
-    "thesis_project": "Predictive Analytics for E-commerce Recommendations"
-  },
-  "projects_portfolio": [
-    {
-      "name": "AI-Powered Digital Twin Workshop Platform",
-      "description": "End-to-end RAG system for interview preparation",
-      "technologies": ["Python", "Upstash Vector", "Groq API", "Next.js"],
-      "impact": "Helped 100+ professionals improve interview performance",
-      "github_url": "https://github.com/username/digital-twin",
-      "live_demo": "https://mydigitaltwin.vercel.app"
+    "institution_1": {
+      "school": "APIC, Brisbane",
+      "degree": "Bachelor of Information Technology",
+      "dates": "February 2025 – Present"
+    },
+    "institution_2": {
+      "school": "ECA College, Brisbane",
+      "degree": "Diploma of Information Technology",
+      "dates": "August 2023 – February 2025"
+    },
+    "institution_3": {
+      "school": "I.T. High School (Italy)",
+      "degree": "High School Diploma in Information Technology",
+      "dates": "2013 – 2018",
+      "highlights": ["Software Development", "Network Infrastructure"],
+      "technologies_studied": ["C++", "Java", "PHP", "HTML", "CSS", "SQL"]
     }
-  ],
+  },
+  "projects_portfolio": [],
   "career_goals": {
-    "short_term": "Lead technical architect role with AI/ML focus",
-    "long_term": "Head of Engineering at AI-first company",
-    "learning_focus": ["Advanced AI/ML systems", "Large-scale system architecture", "Team leadership"],
-    "industries_interested": ["Fintech", "AI/ML", "Enterprise SaaS"]
+    "short_term": "Join a software engineering or IT role that allows me to grow technically while contributing to real-world, meaningful projects.",
+    "long_term": "Develop into a senior engineer working across software development and systems integration, with the ability to design and deliver large-scale solutions.",
+    "learning_focus": [
+      ".NET Core",
+      "Cloud technologies",
+      "API development",
+      "Modern frontend frameworks"
+    ],
+    "industries_interested": ["Technology", "Software Development", "IT Services", "Enterprise Systems"]
   },
-  "interview_prep": {
-    "common_questions": {
-      "behavioral": [
-        "Tell me about a time you had to lead a difficult technical decision",
-        "Describe a project where you had to learn a new technology quickly",
-        "How do you handle conflicting priorities and tight deadlines?"
-      ],
-      "technical": [
-        "Walk me through your approach to system design for a high-traffic application",
-        "How would you implement a real-time notification system?",
-        "Explain your experience with microservices architecture"
-      ],
-      "situational": [
-        "A critical production bug is affecting customers. Walk me through your response process",
-        "How would you approach mentoring a struggling team member?",
-        "Describe how you would evaluate and implement a new technology in your team"
-      ],
-      "company_research": {
-        "research_areas": ["Company mission and values", "Recent product launches", "Engineering culture", "Technical challenges"],
-        "preparation_questions": ["What excites you about our product?", "Why do you want to work here?", "What questions do you have for us?"]
-      }
-    },
-    "weakness_mitigation": [
-      {
-        "weakness": "Limited experience with Kubernetes in production",
-        "mitigation": "Currently completing CKA certification, have experience with Docker and container orchestration concepts"
-      }
-    ]
-  },
-  "professional_development": {
-    "recent_learning": ["RAG systems implementation", "Vector databases", "MCP protocol development"],
-    "conferences_attended": ["PyCon Australia 2024", "AWS re:Invent 2023"],
-    "publications": ["Blog post: Building Production RAG Systems with Upstash Vector"],
-    "open_source": ["Contributor to FastAPI documentation", "Maintainer of internal Python utilities library"]
-  },
-  "content_chunks": [
-    {
-      "id": "chunk_001",
-      "title": "Professional Summary",
-      "type": "summary",
-      "content": "I'm a Senior Software Engineer with 5+ years of experience building scalable applications. Currently working at TechCorp Australia, a fintech startup, where I lead a team of engineers and manage infrastructure budgets.",
-      "metadata": {"category": "overview", "tags": ["experience", "leadership"]}
-    },
-    {
-      "id": "chunk_002",
-      "title": "Technical Skills - Programming",
-      "type": "skills",
-      "content": "I'm an expert in Python with 5 years of experience, working with frameworks like Django, FastAPI, and Flask. I also have advanced JavaScript skills with 4 years experience in React, Node.js, and TypeScript.",
-      "metadata": {"category": "technical", "tags": ["python", "javascript", "frameworks"]}
-    },
-    {
-      "id": "chunk_003",
-      "title": "Cloud & Infrastructure Experience",
-      "type": "skills",
-      "content": "I have 4 years of AWS experience, 3 years with Docker, and 2 years with Kubernetes. I've managed $300K annual infrastructure budgets and implemented microservices architectures.",
-      "metadata": {"category": "technical", "tags": ["aws", "cloud", "infrastructure"]}
-    },
-    {
-      "id": "chunk_004",
-      "title": "AI/ML Experience",
-      "type": "skills",
-      "content": "I have experience with RAG systems, Vector databases, LLM integration, and OpenAI API. I've built AI-powered applications including digital twin platforms.",
-      "metadata": {"category": "technical", "tags": ["ai", "ml", "rag"]}
-    },
-    {
-      "id": "chunk_005",
-      "title": "Leadership Achievement",
-      "type": "achievement",
-      "content": "At TechCorp, I led an architectural redesign that reduced page load times by 40% (from 3s to 1.8s), increased user retention by 15%, and saved $50K annually in server costs. I mentor 3 junior developers and coordinate cross-functional teams.",
-      "metadata": {"category": "experience", "tags": ["leadership", "achievement", "performance"]}
-    },
-    {
-      "id": "chunk_006",
-      "title": "Education Background",
-      "type": "education",
-      "content": "I graduated from the University of Melbourne in 2019 with a Bachelor of Computer Science, achieving a 3.7/4.0 GPA (High Distinction). My thesis focused on Predictive Analytics for E-commerce Recommendations.",
-      "metadata": {"category": "education", "tags": ["university", "degree"]}
-    },
-    {
-      "id": "chunk_007",
-      "title": "Career Goals",
-      "type": "goals",
-      "content": "My short-term goal is to move into a Lead Technical Architect role with AI/ML focus. Long-term, I aim to become Head of Engineering at an AI-first company. I'm interested in Fintech, AI/ML, and Enterprise SaaS industries.",
-      "metadata": {"category": "career", "tags": ["goals", "ambition"]}
-    },
-    {
-      "id": "chunk_008",
-      "title": "Salary and Location",
-      "type": "compensation",
-      "content": "My current salary range is $85,000-$95,000 AUD, with expectations of $95,000-$110,000 AUD for my next role. I'm based in Melbourne and open to CBD, Remote, or Hybrid work. I'm willing to relocate and available for up to 25% interstate travel.",
-      "metadata": {"category": "compensation", "tags": ["salary", "location", "flexibility"]}
-    }
-  ]
+  "interview_prep": {},
+  "professional_development": {},
+  "content_chunks": []
 }

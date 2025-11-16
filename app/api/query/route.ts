@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Index } from '@upstash/vector';
 import Groq from 'groq-sdk';
+import { recordMetric } from '../metrics/route';
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
@@ -12,19 +13,25 @@ const index = new Index({
 });
 
 export async function POST(request: NextRequest) {
+  const requestStartTime = Date.now();
+  
   try {
     const { question } = await request.json();
 
     if (!question) {
+      recordMetric('request', Date.now() - requestStartTime, false);
       return NextResponse.json({ error: 'No question provided' }, { status: 400 });
     }
 
     // Query vector database
+    const vectorSearchStart = Date.now();
     const results = await index.query({
       data: question,
       topK: 3,
       includeMetadata: true,
     });
+    const vectorSearchTime = Date.now() - vectorSearchStart;
+    recordMetric('vector_search', vectorSearchTime);
 
     if (!results || results.length === 0) {
       return NextResponse.json({
@@ -91,6 +98,10 @@ Provide a helpful, professional response:`;
 
     const answer = completion.choices[0].message.content?.trim() || 'Unable to generate response';
 
+    // Record successful request
+    const totalTime = Date.now() - requestStartTime;
+    recordMetric('request', totalTime, true);
+
     return NextResponse.json({
       answer,
       sources,
@@ -98,6 +109,11 @@ Provide a helpful, professional response:`;
     });
   } catch (error: any) {
     console.error('Error in query API:', error);
+    
+    // Record failed request
+    const totalTime = Date.now() - requestStartTime;
+    recordMetric('request', totalTime, false);
+    
     return NextResponse.json(
       { error: `Error generating response: ${error.message}` },
       { status: 500 }
