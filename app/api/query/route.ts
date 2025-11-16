@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Index } from '@upstash/vector';
 import Groq from 'groq-sdk';
-import { recordMetric } from '@/lib/metrics';
+import { recordMetric } from '../../../lib/metrics';
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { metrics, recordMetric, resetMetrics, formatUptime } from '@/lib/metrics';
+import { metrics, recordMetric, resetMetrics, formatUptime } from '../../../lib/metrics';
 
 export async function GET(request: NextRequest) {
   try {
