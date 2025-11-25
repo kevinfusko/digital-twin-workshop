@@ -38,6 +38,15 @@ async function embedProfile() {
 
   console.log('✅ Connected to Upstash Vector\n');
 
+  // Delete all existing vectors
+  console.log('🗑️  Deleting all existing vectors...\n');
+  try {
+    await index.reset();
+    console.log('✅ Database cleared successfully\n');
+  } catch (error) {
+    console.log('⚠️  Could not reset database (may already be empty)\n');
+  }
+
   // Load digitaltwin.json
   const profilePath = path.join(process.cwd(), 'digitaltwin.json');
   const profileData = JSON.parse(fs.readFileSync(profilePath, 'utf-8'));

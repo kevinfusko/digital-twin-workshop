@@ -13,8 +13,8 @@
     }
   },
   "salary_location": {
-    "current_salary": "",
-    "salary_expectations": "",
+    "current_salary": "$80,000 AUD",
+    "salary_expectations": "$90,000 - $100,000 AUD based on role complexity",
     "location_preferences": ["Brisbane", "Australia-wide", "Remote"],
     "relocation_willing": true,
     "remote_experience": "Yes",
@@ -24,13 +24,13 @@
   "experience": [
     {
       "company": "Casu",
-      "title": "Supervisor / General Labourer",
+      "title": "Landscaping Labourer / Supervisor",
       "duration": "January 2024 – Present",
       "company_context": "Landscaping and outdoor construction services provider",
       "team_structure": "Small project teams; coordination and task planning responsibilities",
       "achievements_star": [
         {
-          "situation": "Daily outdoor projects required organisation and coordination.",
+          "situation": "Daily maintenance and landscaping projects required organisation and coordination.",
           "task": "Supervise small teams and ensure smooth project execution.",
           "action": "Delegated tasks, coordinated workflows, and supported hands-on construction activities.",
           "result": "Improved task efficiency and maintained consistent project quality."
@@ -77,7 +77,7 @@
       "technical_skills_used": [
         ".NET Framework", "MVC", "C#", "SQL Server",
         "HTML5", "CSS3", "JavaScript", "jQuery", "ASP.NET", "VB.NET",
-        "Networking", "Windows Server", "IT Infrastructure"
+        "Networking", "Windows Server", "IT Infrastructure, IT Support"
       ],
       "leadership_examples": ["Led development of internal web applications"],
       "budget_managed": "",
@@ -141,7 +141,7 @@
       ],
       "databases": ["SQL Server"],
       "cloud_platforms": [],
-      "ai_ml": []
+      "ai_ml": ["RAG systems", "Vector databases", "LLM integration", "OpenAI API"]
     },
     "soft_skills": [
       "Customer Service",
@@ -151,7 +151,7 @@
       "Clear communication",
       "Teaching and training"
     ],
-    "certifications": []
+    "certifications": ["Diploma of Information Technology (2025)"]
   },
   "education": {
     "institution_1": {
@@ -172,7 +172,16 @@
       "technologies_studied": ["C++", "Java", "PHP", "HTML", "CSS", "SQL"]
     }
   },
-  "projects_portfolio": [],
+  "projects_portfolio": [
+    {
+      "name": "AI-Powered Digital Twin Workshop Platform",
+      "description": "End-to-end RAG system for interview preparation",
+      "technologies": ["Python", "Upstash Vector", "Groq API", "Next.js"],
+      "impact": "",
+      "github_url": "https://github.com/kevinfusko/digital-twin-workshop",
+      "live_demo": "https://mydigitaltwin.vercel.app"
+    }
+  ],
   "career_goals": {
     "short_term": "Join a software engineering or IT role that allows me to grow technically while contributing to real-world, meaningful projects.",
     "long_term": "Develop into a senior engineer working across software development and systems integration, with the ability to design and deliver large-scale solutions.",
